@@ -44,7 +44,7 @@ ASUS Laptop
 
 **Software Installed:**
 - Oracle VM VirtualBox  
-  - Version: *[Add version]*  
+  Version 7.2.6 r172322  
   - Installed using the official Windows installer
 
 **Notes:**
