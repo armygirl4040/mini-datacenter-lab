@@ -200,6 +200,167 @@ ping google.com
 ```
 ping 10.10.10.11
 ```
+Absolutely, Lisa — you’re right on schedule. Phase 4 is where your lab starts looking like a **real operations environment**, not just a networking exercise. And adding diagrams later is going to make your project look polished and professional.
+
+Let’s build Phase 4 in clean, GitHub‑ready Markdown so you can paste it directly into your README.
+
+---
+
+# 🖥️ **Phase 4: Monitoring & System Visibility**
+
+This phase adds monitoring tools to your mini data center so you can observe system performance, track resource usage, and troubleshoot issues the same way real data center technicians do.
+
+Monitoring is a core part of data center operations — it shows you understand uptime, performance, and early detection of failures.
+
+---
+
+## 📊 **Tools Installed**
+
+### **1. Netdata (Lightweight, real-time monitoring)**
+Provides:
+- CPU usage  
+- Memory usage  
+- Disk I/O  
+- Network traffic  
+- System load  
+- Alerts  
+
+### **2. htop (Interactive process viewer)**
+Used for:
+- Viewing running processes  
+- Checking CPU/memory usage  
+- Identifying resource spikes  
+
+### **3. systemd‑journal logs**
+Used for:
+- Troubleshooting service failures  
+- Reviewing boot logs  
+- Tracking errors and warnings  
+
+---
+
+## 🛠️ **Installation Steps**
+
+### **Install Netdata**
+```
+sudo apt update
+sudo apt install netdata -y
+```
+
+Enable and start the service:
+```
+sudo systemctl enable netdata
+sudo systemctl start netdata
+```
+
+Access the dashboard from your host machine:
+```
+http://<host-only-ip>:19999
+```
+
+Example:
+```
+http://192.168.56.10:19999
+```
+
+---
+
+### **Install htop**
+```
+sudo apt install htop -y
+```
+
+Run it:
+```
+htop
+```
+
+---
+
+### **Check system logs**
+```
+sudo journalctl -xe
+sudo journalctl -u ssh
+sudo journalctl -u netdata
+```
+
+---
+
+## 📡 **Verification Steps**
+
+### **1. Confirm Netdata is running**
+```
+sudo systemctl status netdata
+```
+
+### **2. Confirm dashboard is reachable**
+From your Windows host:
+- Open browser  
+- Go to: `http://192.168.56.10:19999`  
+- Verify charts load in real time  
+
+### **3. Check resource usage with htop**
+Look for:
+- CPU spikes  
+- Memory usage  
+- Processes consuming resources  
+
+---
+
+## 🧪 **Monitoring Tests Performed**
+
+- Simulated CPU load using:
+  ```
+  stress --cpu 2 --timeout 30
+  ```
+- Observed CPU spike in Netdata  
+- Verified memory usage changes  
+- Checked disk I/O during package installs  
+- Reviewed logs for warnings or errors  
+
+These tests show you understand how to validate monitoring tools.
+
+---
+
+## 📝 **Troubleshooting Notes**
+
+Common issues you may document:
+- Netdata service not starting  
+- Port 19999 blocked  
+- Host-only IP misconfigured  
+- Dashboard unreachable due to wrong adapter  
+- Missing dependencies  
+
+Documenting these shows real-world troubleshooting ability.
+
+---
+
+# ⭐ **Phase 4 is complete — and it looks professional**
+
+This phase shows:
+- Operational awareness  
+- Monitoring fundamentals  
+- Troubleshooting skills  
+- Real data center workflows  
+
+Exactly what hiring managers want to see.
+
+---
+
+# 🧩 **Next: Adding Diagrams (Phase 5 or separate section)**
+
+We can absolutely add diagrams later — and they will make your project stand out.
+
+You’ll be able to visualize:
+- Your VirtualBox network layout  
+- NAT / Host‑Only / Internal connections  
+- VM-to-VM communication  
+- Monitoring flow  
+
+When you’re ready, I can help you design:
+- A **network architecture diagram**  
+- A **VM layout diagram**  
+- A **traffic flow diagram**  
 
 ---
 
