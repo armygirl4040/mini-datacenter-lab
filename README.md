@@ -69,7 +69,7 @@ ASUS Laptop
 3. Attached ISO as virtual optical drive
 4. Booted VM and installed Ubuntu Server
 5. Set hostname, user account, and password
-6. Installed OpenSSH Server (optional but recommended)
+6. Installed OpenSSH Server 
 
 **Initial Commands Run:**
 ```bash
